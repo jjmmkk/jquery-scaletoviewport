@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>scaleToViewport()</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <article>
+        <h1>Bacon ipsum</h1>
+        <p>Tail tempor cow, velit aliqua jowl excepteur magna pork belly aute. Sirloin est et, dolore salami pastrami occaecat eu ex sunt beef flank in quis beef ribs. Drumstick qui cillum, incididunt strip steak pig prosciutto bacon bresaola chuck. Meatball sirloin nisi t-bone, swine leberkas ex shankle nulla aliquip salami pork belly.</p>
+        <figure>
+            <img src="http://placekitten.com/g/600/825" alt="A friggin' huge cat">
+            <figcaption>
+                <i>– Andouille biltong swine pork hamburger.</i>
+            </figcaption>
+        </figure>
+        <p>In excepteur elit et fugiat, exercitation ex sunt nostrud frankfurter tail flank drumstick labore. Short ribs incididunt exercitation ham hock dolore. Proident nulla non, leberkas shank sint pastrami flank esse velit brisket ea sausage tongue. Aute drumstick ham duis, ex eu salami ribeye ullamco chicken irure et bacon ball tip elit. Enim incididunt filet mignon pork chop eu short loin, cupidatat ut voluptate bresaola ullamco mollit.</p>
+        <figure>
+            <img src="http://placekitten.com/g/600/823" alt="A friggin' huge cat">
+            <figcaption>
+                <i>– Frankfurter bacon ham tail.</i>
+            </figcaption>
+        </figure>
+        <p>Incididunt turkey mollit swine, aliqua sint venison ut bacon beef ribs fugiat bresaola cupidatat officia magna. Beef tri-tip salami labore jowl incididunt esse, non sunt pork chop excepteur chicken filet mignon. Spare ribs shankle minim, aliqua sirloin salami tenderloin jowl sed short loin pork chop adipisicing bresaola. Kielbasa cillum exercitation turkey sed, duis incididunt ut ut pork loin laboris meatball salami excepteur strip steak. Beef ea elit tri-tip, eiusmod shoulder kielbasa.</p>
+        <figure>
+            <img src="http://placekitten.com/g/600/824" alt="A friggin' huge cat">
+            <figcaption>
+                <i>– Corned beef ham hock chuck.</i>
+            </figcaption>
+        </figure>
+        <p>Short ribs ham cow, qui eiusmod spare ribs salami ex ea ut tempor laboris dolor frankfurter in. Shoulder shank consequat cillum aliqua, pariatur pancetta magna shankle excepteur venison bacon short ribs veniam. Ut rump cow, dolore nulla pork chop corned beef turducken shoulder tail qui tongue sint exercitation fatback. Pig laborum in beef.</p>
+    </article>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script src="../jquery.scaletoviewport.js"></script>
+    <script>
+        jQuery( function( $ ) {
+            $( 'figure img' ).scaleToViewport({
+                'min_height': 400,
+                'padding': 40
+            })
+        } );
+    </script>
+</body>
+</html>

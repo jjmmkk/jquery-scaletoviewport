@@ -1,0 +1,21 @@
+html {
+    background: url( 'subtle_zebra_3d.png' ) repeat;
+}
+body {
+    margin: 20px auto;
+    padding: 5px 20px;
+    width: 640px;
+    background-color: rgba( 255, 255, 255, 0.5 );
+    color: #222;
+    font-family: sans-serif;
+    border: 1px dashed #eee;
+    box-shadow: 0 0 3px #ddd, inset 0 0 3px #ddd;
+}
+figure {
+    margin: 0;
+    text-align: center;
+}
+
+.original-size {
+    height: auto !important;
+}
