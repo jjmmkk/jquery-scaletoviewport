@@ -1,3 +1,8 @@
+ABSTRACT
+
+Scales elements to keep their height less than that of the viewport.
+
+
 TODO
 
 * Documentation
