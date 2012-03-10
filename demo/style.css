@@ -15,7 +15,13 @@ figure {
     margin: 0;
     text-align: center;
 }
+figure img {
+    max-width: 100%;
+}
 
 .original-size {
     height: auto !important;
+}
+img {
+    -ms-interpolation-mode: bicubic;/* IE7 */
 }
