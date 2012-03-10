@@ -35,10 +35,16 @@
     <script src="../jquery.scaletoviewport.min.js"></script>
     <script>
         jQuery( function( $ ) {
-            $( 'figure img' ).scaleToViewport({
-                'min_height': 400,
-                'padding': 40
-            })
+
+            $( 'figure img' ).each( function() {
+                var $this = $( this );
+                $this.scaleToViewport( {
+                    'min_height': 400,
+                    'padding': 40,
+                    'click_toggle_anchor': $this.parent()
+                } );
+            } );
+
         } );
     </script>
 </body>

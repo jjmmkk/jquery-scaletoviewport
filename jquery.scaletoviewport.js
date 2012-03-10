@@ -1,39 +1,37 @@
 /*
-*   jQuery Scale To Viewport plugin v1.0
+*   jQuery Scale To Viewport plugin v1.1
 */
 
 ( function( $ ) {
 
-    var $window = $( window );
-
     $.fn.scaleToViewport = function( options ) {
 
         var settings = $.extend( {
-          'click_toggle_scaling': false,
-          'css_toggle_class': 'original-size',
-          'min_height': 300,
-          'padding': 0
+            'click_toggle_anchor': false,
+            'click_toggle_scaling': true,
+            'css_toggle_class': 'original-size',
+            'min_height': 300,
+            'padding': 0
         }, options );
 
         return this.each( function() {
 
+            var $window = $( window );
             var $this = $( this );
             var this_height;
+            var viewport_padding = settings.padding;
+            var this_min_height = settings.min_height;
 
-            $window.bind( 'resize load', function( event ) {
+            $window.bind( 'load', function() {
 
-                if ( event.type === 'load' ) {// Wait for images to load
-                    this_height = $this.height();
-                }
+                this_height = $this.height();
 
-                var viewport_height = $window.height() - settings.padding;
+            } ).bind( 'resize load', function() {
+
+                var viewport_height = $window.height() - viewport_padding;
 
                 if ( viewport_height < this_height ) {
-                    if ( viewport_height > settings.min_height ) {
-                        $this.height( viewport_height );
-                    } else {
-                        $this.height( settings.min_height );
-                    }
+                    $this.height( ( viewport_height > this_min_height ? viewport_height : this_min_height ) );
                 } else if ( $this.height() !== this_height ) {
                     $this.height( this_height );
                 }
@@ -41,7 +39,7 @@
             } );
 
             if ( settings.click_toggle_scaling ) {
-                $this.bind( 'click', function() {
+                ( settings.click_toggle_anchor || $this ).bind( 'click', function() {
                     $this.toggleClass( settings.css_toggle_class );
                 } );
             }
